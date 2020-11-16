@@ -10,19 +10,19 @@ class PS5Bot():
         sleep(50)
 
     def buyPS5(self):
-        self.driver.get('https://www.amazon.es/dp/8441539901/?coliid=I3DE9591VF4NM3&colid=2AWUCLX2YRNRY&psc=1')
+        self.driver.get('https://www.amazon.es/dp/B08KKJ37F7?tag=infolinkin-21th=1&psc=1')
         sleep(1)   
         try:
             buyNow = self.driver.find_element_by_xpath('//*[@id="buy-now-button"]')
             buyNow.click()
-            sleep(1)
-            buyNow2 = self.driver.find_element_by_xpath('/html/body/div[4]/div[1]/div/div/div/div[3]/div/form/div/span/span/span/input')  
-            buyNow2.click()
             sleep(2)
+            buyNow2 = self.driver.find_element_by_xpath('//*[@id="submitOrderButtonId"]/span/input')  
+            buyNow2.click()
+            sleep(1)
             self.driver.close()
         except Exception as e:
             print(e)
-            sleep(2)
+            sleep(3)
             self.buyPS5()
 bot = PS5Bot()
 bot.login()
