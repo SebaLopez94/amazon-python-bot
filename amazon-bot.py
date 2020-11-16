@@ -9,7 +9,7 @@ class PS5Bot():
         self.driver.get('https://www.amazon.es/')
         sleep(50)
 
-    def buyPS5(self):
+    def checkAndBuyPS5(self):
         self.driver.get('https://www.amazon.es/dp/B08KKJ37F7?tag=infolinkin-21th=1&psc=1')
         sleep(1)   
         try:
@@ -23,7 +23,7 @@ class PS5Bot():
         except Exception as e:
             print(e)
             sleep(3)
-            self.buyPS5()
+            self.checkAndBuyPS5()
 bot = PS5Bot()
 bot.login()
-bot.buyPS5()
+bot.checkAndBuyPS5()
